@@ -5189,7 +5189,7 @@ static int skill_castend_damage_id(struct block_list *src, struct block_list *bl
 				skill->area_temp[0] = 0;
 				skill->area_temp[1] = bl->id;
 				skill->area_temp[2] = 0;
-				
+
 				if (sd != NULL && (skill_id == SP_SHA || skill_id == SP_SWHOO) && bl->type != BL_MOB) {
 					status->change_start(src, bl, SC_STUN, 10000, skill_lv, 0, 0, 0, 500, 10);
 					clif->skill_fail(sd, skill_id, USESKILL_FAIL, 0, 0);
@@ -6126,7 +6126,7 @@ static int skill_castend_damage_id(struct block_list *src, struct block_list *bl
 					return 1;
 				}
 			}
-	
+
 			if (sd != NULL) { // Tagging the target.
 				int i;
 				ARR_FIND(0, MAX_STELLAR_MARKS, i, sd->stellar_mark[i] == bl->id);
@@ -6158,7 +6158,7 @@ static int skill_castend_damage_id(struct block_list *src, struct block_list *bl
 		}
 			break;
 		case SJ_FALLINGSTAR_ATK:
-			if (sd != NULL) { // If a player used the skill it will search for targets marked by that player. 
+			if (sd != NULL) { // If a player used the skill it will search for targets marked by that player.
 				if (tsc != NULL && tsc->data[SC_FLASHKICK] != NULL && tsc->data[SC_FLASHKICK]->val4 == 1) { // Mark placed by a player.
 					int i = 0;
 
@@ -6196,7 +6196,7 @@ static int skill_castend_damage_id(struct block_list *src, struct block_list *bl
 			)) {
 				// Requires target to have a soul link or target to have more than 10% of MaxHP.
 				// With this skill requiring a soul link or the target to have more than 10% of MaxHP
-				// I wonder, if the cooldown still happens after it fails. Need a confirm. [Rytech] 
+				// I wonder, if the cooldown still happens after it fails. Need a confirm. [Rytech]
 				if (sd != NULL)
 					clif->skill_fail(sd, skill_id, USESKILL_FAIL_LEVEL, 0, 0);
 				break;
@@ -7655,7 +7655,7 @@ static int skill_castend_nodamage_id(struct block_list *src, struct block_list *
 			}
 		}
 			break;
-		
+
 		case MO_CALLSPIRITS:
 			if (sd != NULL) {
 				clif->skill_nodamage(src, bl, skill_id, skill_lv, 1);
@@ -7764,7 +7764,7 @@ static int skill_castend_nodamage_id(struct block_list *src, struct block_list *
 		{
 			struct status_change *sc = status->get_sc(src);
 			int count = 0;
-	
+
 			if (skill_id == SJ_NEWMOONKICK) {
 				if (tsce != NULL) {
 					status_change_end(bl, type, INVALID_TIMER);
@@ -8557,7 +8557,7 @@ static int skill_castend_nodamage_id(struct block_list *src, struct block_list *
 			if (sd) {
 				clif->skill_nodamage(src,bl,skill_id,skill_lv,1);
 				//Prepare 200 White Potions.
-				if (!skill->produce_mix(sd, skill_id, ITEMID_WHITE_POTION, 0, 0, 0, 200))
+				if (!skill->produce_mix(sd, skill_id, ITEMID_BLUE_POTION, 0, 0, 0, 200))
 					clif->skill_fail(sd, skill_id, USESKILL_FAIL_LEVEL, 0, 0);
 			}
 			break;
@@ -9410,8 +9410,8 @@ static int skill_castend_nodamage_id(struct block_list *src, struct block_list *
 		case SL_STAR:
 		case SL_SUPERNOVICE:
 		case SL_WIZARD:
-			if (sd != NULL && tsc != NULL && 
-				(tsc->data[SC_SOULGOLEM] || 
+			if (sd != NULL && tsc != NULL &&
+				(tsc->data[SC_SOULGOLEM] ||
 				tsc->data[SC_SOULSHADOW] ||
 				tsc->data[SC_SOULFALCON] ||
 				tsc->data[SC_SOULFAIRY])
@@ -9436,8 +9436,8 @@ static int skill_castend_nodamage_id(struct block_list *src, struct block_list *
 			sc_start(src,src,SC_SMA_READY,100,skill_lv,skill->get_time(SL_SMA,skill_lv));
 			break;
 		case SL_HIGH:
-			if (sd != NULL && tsc != NULL && 
-				(tsc->data[SC_SOULGOLEM] != NULL || 
+			if (sd != NULL && tsc != NULL &&
+				(tsc->data[SC_SOULGOLEM] != NULL ||
 				tsc->data[SC_SOULSHADOW] != NULL ||
 				tsc->data[SC_SOULFALCON] != NULL ||
 				tsc->data[SC_SOULFAIRY] != NULL)
@@ -16706,7 +16706,7 @@ static int skill_consume_requirement(struct map_session_data *sd, uint16 skill_i
 				break;
 			}
 		}
-			
+
 
 		if(req.zeny > 0)
 		{

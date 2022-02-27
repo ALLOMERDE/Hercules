@@ -76,6 +76,22 @@ new_1-1,144,107,2	script	Guard#nv2	8W_SOLDIER,{
 	close;
 }
 
+new_1-1,53,104,4	script	Prontera#nv3	WARPNPC,{
+	mes "[Prontera]";
+	mes "Skip to prontera?";
+	next;
+	if(select("I'd like to stay here a bit.", "Warp me."==1) {
+		mes "[Prontera]";
+		mes "Enjoy your time here.";
+		close;
+	}
+		mes "[Prontera]";
+		mes "Let's go.";
+	savepoint "prontera",156,183;
+	warp "prontera",156,183;
+	close;
+}
+
 //== Receptionist ==========================================
 new_1-2,100,29,4	script	Receptionist#nv1	4_M_04,{
 	mes "[Training Grounds Receptionist]";
