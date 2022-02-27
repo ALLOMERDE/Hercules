@@ -76,7 +76,7 @@ new_1-1,144,107,2	script	Guard#nv2	8W_SOLDIER,{
 	close;
 }
 
-new_1-1,53,104,0	script	Prontera#nv3	4_M_FARIYKING,{
+new_1-1,53,104,0	script	Prontera	4_M_FARIYKING,{
 	mes "[Prontera]";
 	mes "Skip to prontera?";
 	next;
