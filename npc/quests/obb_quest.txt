@@ -41,7 +41,7 @@
 //= one.
 //=========================================================================
 
-alberta,43,244,0	script	Tourist#thai	4W_M_03,{
+alberta,23,232,4	script	Tourist#thai	4W_M_03,{
 	if (checkweight(Knife,1) == 0) {
 		mes "- Wait a moment! -";
 		mes "- Currently you're carrying -";
