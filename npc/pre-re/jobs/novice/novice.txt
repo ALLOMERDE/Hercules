@@ -80,7 +80,7 @@ new_1-1,53,104,0	script	Prontera	4_F_MAYSEL,{
 	mes "[Prontera]";
 	mes "Skip to prontera?";
 	next;
-	if(select("I'd like to stay here a bit.", "Warp me."==1)) {
+	if(select("I'd like to stay here a bit.", "Warp me.")==1) {
 		mes "[Prontera]";
 		mes "Enjoy your time here.";
 		close;
