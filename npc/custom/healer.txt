@@ -48,7 +48,7 @@ einbroch,57,202,6	duplicate(Nurse Joy)	Nurse Joy#einbr	4_F_NURSE
 geffen,115,72,6	duplicate(Nurse Joy)	Nurse Joy#gef	4_F_NURSE
 gonryun,156,122,6	duplicate(Nurse Joy)	Nurse Joy#gon	4_F_NURSE
 hugel,89,150,6	duplicate(Nurse Joy)	Nurse Joy#hug	4_F_NURSE
-izlude,125,118,5	duplicate(Nurse Joy)	Nurse Joy#izl	4_F_NURSE
+izlude,134,91,3	duplicate(Nurse Joy)	Nurse Joy#izl	4_F_NURSE
 jawaii,250,139,4	duplicate(Nurse Joy)	Nurse Joy#jaw	4_F_NURSE
 lighthalzen,152,100,6	duplicate(Nurse Joy)	Nurse Joy#lhz	4_F_NURSE
 louyang,226,103,4	duplicate(Nurse Joy)	Nurse Joy#lou	4_F_NURSE
@@ -56,8 +56,7 @@ manuk,272,144,6	duplicate(Nurse Joy)	Nurse Joy#man	4_F_NURSE
 mid_camp,203,289,6	duplicate(Nurse Joy)	Nurse Joy#mid	4_F_NURSE
 moc_ruins,72,164,4	duplicate(Nurse Joy)	Nurse Joy#moc	4_F_NURSE
 morocc,153,97,6	duplicate(Nurse Joy)	Nurse Joy#mor	4_F_NURSE
-moscovia,220,191,4	duplicate(Nurse Joy)	Nurse Joy#mos	4_F_NURSE
-niflheim,212,182,5	duplicate(Nurse Joy)	Nurse Joy#nif	4_F_NURSE
+moscovia,226,191,4	duplicate(Nurse Joy)	Nurse Joy#mos	4_F_NURSE
 payon,179,106,4	duplicate(Nurse Joy)	Nurse Joy#pay	4_F_NURSE
 prontera,162,193,4	duplicate(Nurse Joy)	Nurse Joy#prt	4_F_NURSE
 rachel,125,116,6	duplicate(Nurse Joy)	Nurse Joy#rac	4_F_NURSE

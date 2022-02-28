@@ -1780,7 +1780,7 @@ static int skill_additional_effect(struct block_list *src, struct block_list *bl
 			break;
 
 		case TF_THROWSTONE:
-			if( !sc_start(src,bl,SC_STUN,3,skill_lv,skill->get_time(skill_id,skill_lv)) )
+			if( !sc_start(src,bl,SC_STUN,30,skill_lv,skill->get_time(skill_id,skill_lv)) )
 				sc_start(src,bl,SC_BLIND,3,skill_lv,skill->get_time2(skill_id,skill_lv));
 			break;
 
@@ -12428,7 +12428,7 @@ static int skill_castend_pos2(struct block_list *src, int x, int y, uint16 skill
 				struct mob_data *md;
 				int class_ = 0;
 				if (skill_id == AM_SPHEREMINE) {
-					class_ = MOBID_MARINE_SPHERE;
+					class_ = MOBID_G_MARINE_SPHERE;
 				} else {
 					Assert_retb(skill_lv > 0 && skill_lv <= 5);
 					switch (skill_lv) {
@@ -16513,7 +16513,7 @@ static int skill_check_condition_castend(struct map_session_data *sd, uint16 ski
 				}
 			} else {
 				maxcount = skill->get_maxcount(skill_id,skill_lv);
-				mob_class = MOBID_MARINE_SPHERE;
+				mob_class = MOBID_G_MARINE_SPHERE;
 			}
 			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
 				i = map->foreachinmap(skill->check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);

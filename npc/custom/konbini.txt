@@ -1,0 +1,164 @@
+//===== Hercules Script ======================================
+//= Konbini
+//===== By: ==================================================
+//= Euphy
+//===== Current Version: =====================================
+//= 1.2
+//===== Description: =========================================
+//= Basic Konbini script.
+//===== Additional Comments: =================================
+//= 1.0 Initial script.
+//= 1.1 Aligned coordinates with @go.
+//= 1.2 Fix variables and character stuck at healing
+//============================================================
+
+-	script	trader  Konbini  2_VENDING_MACHINE1,{
+OnInit:
+
+sellitem Wing_Of_Fly;
+sellitem Wing_Of_Butterfly;
+sellitem Spectacles;
+sellitem Red_Potion;
+sellitem Orange_Potion;
+sellitem Yellow_Potion;
+sellitem White_Potion;
+sellitem Green_Potion;
+sellitem Fruit_Of_Mastela;
+sellitem Center_Potion;
+sellitem Awakening_Potion;
+sellitem Berserk_Potion;
+sellitem Blue_Gemstone;
+sellitem Red_Gemstone, 1200;
+sellitem Yellow_Gemstone, 2400;
+sellitem Leaf_Of_Yggdrasil;
+sellitem Steel_Arrow;
+sellitem Fire_Arrow;
+sellitem Silver_Arrow;
+sellitem Booby_Trap;
+}
+
+
+// Duplicates
+//============================================================
+alberta,32,240,4	duplicate(Konbini)	Konbini#alb	2_VENDING_MACHINE1
+aldebaran,135,114,6	duplicate(Konbini)	Konbini#alde	2_VENDING_MACHINE1
+amatsu,203,94,4	duplicate(Konbini)	Konbini#ama	2_VENDING_MACHINE1
+ayothaya,203,1174,4	duplicate(Konbini)	Konbini#ayo	2_VENDING_MACHINE1
+comodo,197,149,4	duplicate(Konbini)	Konbini#com	2_VENDING_MACHINE1
+einbech,66,33,2	duplicate(Konbini)	Konbini#einbe	2_VENDING_MACHINE1
+einbroch,57,207,4	duplicate(Konbini)	Konbini#einbr	2_VENDING_MACHINE1
+geffen,115,67,6	duplicate(Konbini)	Konbini#gef	2_VENDING_MACHINE1
+gonryun,165,118,2	duplicate(Konbini)	Konbini#gon	2_VENDING_MACHINE1
+hugel,101,146,2	duplicate(Konbini)	Konbini#hug	2_VENDING_MACHINE1
+izlude,121,194,5	duplicate(Konbini)	Konbini#izl	2_VENDING_MACHINE1
+jawaii,246,131,6	duplicate(Konbini)	Konbini#jaw	2_VENDING_MACHINE1
+lighthalzen,154,106,5	duplicate(Konbini)	Konbini#lhz	2_VENDING_MACHINE1
+louyang,212,108,5	duplicate(Konbini)	Konbini#lou	2_VENDING_MACHINE1
+manuk,274,152,5	duplicate(Konbini)	Konbini#man	2_VENDING_MACHINE1
+mid_camp,210,289,5	duplicate(Konbini)	Konbini#mid	2_VENDING_MACHINE1
+moc_ruins,69,166,4	duplicate(Konbini)	Konbini#moc	2_VENDING_MACHINE1
+morocc,162,97,3	duplicate(Konbini)	Konbini#mor	2_VENDING_MACHINE1
+moscovia,220,191,4	duplicate(Konbini)	Konbini#mos	2_VENDING_MACHINE1
+payon,166,106,4	duplicate(Konbini)	Konbini#pay	2_VENDING_MACHINE1
+prontera,151,192,4	duplicate(Konbini)	Konbini#prt	2_VENDING_MACHINE1
+rachel,130,119,4	duplicate(Konbini)	Konbini#rac	2_VENDING_MACHINE1
+splendide,208,149,2	duplicate(Konbini)	Konbini#spl	2_VENDING_MACHINE1
+thor_camp,246,78,4	duplicate(Konbini)	Konbini#thor	2_VENDING_MACHINE1
+umbala,97,157,5	duplicate(Konbini)	Konbini#umb	2_VENDING_MACHINE1
+veins,224,128,3	duplicate(Konbini)	Konbini#ve	2_VENDING_MACHINE1
+xmas,154,128,1	duplicate(Konbini)	Konbini#xmas	2_VENDING_MACHINE1
+yuno,152,51,5	duplicate(Konbini)	Konbini#yuno	2_VENDING_MACHINE1
+
+prt_in,171,140,0	trader	Crafting Shop	1_F_01,{
+OnInit:
+	sellitem Alcol_Create_Book;
+	sellitem FireBottle_Create_Book;
+	sellitem Acid_Create_Book;
+	sellitem Plant_Create_Book;
+	sellitem Mine_Create_Book;
+	sellitem Coating_Create_Book;
+	sellitem Slim_Potion_Create_Book;
+	sellitem Normal_Potion_Book;
+	sellitem Medicine_Bowl;
+	sellitem Empty_Potion;
+  sellitem Empty_Cylinder;
+  sellitem Seed_Of_Life;
+  sellitem Yggdrasilberry_Dew;
+  sellitem Life_Force_Pot;
+  sellitem Scroll;
+  sellitem Portable_Furnace;
+  sellitem Iron_Hammer;
+  sellitem Golden_Hammer;
+  sellitem Oridecon_Hammer;
+  sellitem Anvil;
+  sellitem Oridecon_Anvil;
+  sellitem Golden_Anvil;
+}
+
+prt_in,165,140,4	trader	Ammos Supplier	1_M_01,{
+OnInit:
+	sellitem Arrow;
+	sellitem Silver_Arrow;
+	sellitem Fire_Arrow;
+	sellitem Steel_Arrow;
+	sellitem Crystal_Arrow;
+	sellitem Arrow_Of_Wind;
+	sellitem Stone_Arrow;
+	sellitem Immatrial_Arrow;
+	sellitem Stun_Arrow;
+	sellitem Freezing_Arrow;
+	sellitem Flash_Arrow;
+	sellitem Curse_Arrow;
+	sellitem Rusty_Arrow;
+	sellitem Poison_Arrow;
+	sellitem Incisive_Arrow;
+	sellitem Oridecon_Arrow;
+	sellitem Arrow_Of_Counter_Evil;
+	sellitem Arrow_Of_Shadow;
+	sellitem Sleep_Arrow;
+	sellitem Silence_Arrow;
+  sellitem Bullet;
+  sellitem Silver_Bullet;
+  sellitem Flame_Stone;
+  sellitem Ice_Stone;
+  sellitem Wind_Stone;
+  sellitem Shadow_Orb;
+  sellitem Shuriken;
+  sellitem Nimbus_Shuriken;
+  sellitem Flash_Shuriken;
+  sellitem Sharp_Leaf_Shuriken;
+  sellitem Thorn_Needle_Shuriken;
+  sellitem Kunai_Of_Black_Soil;
+  sellitem Kunai_Of_Deadly_Poison;
+  sellitem Kunai_Of_Fierce_Flame;
+  sellitem Kunai_Of_Furious_Wind;
+  sellitem Kunai_Of_Icicle;
+}
+
+prontera,138,222,5	script	Currency Shop	2_BULLETIN_BOARD,{
+	mes " ";
+	mes " Currency Shop ";
+	mes " ";
+	close;
+}
+
+prontera,135,188,7	script	Player Customization	2_BULLETIN_BOARD,{
+	mes " ";
+	mes " Player Customization ";
+	mes " ";
+	close;
+}
+
+prontera,177,189,1	script	Refinery	2_BULLETIN_BOARD,{
+	mes " ";
+	mes " Refinery ";
+	mes " ";
+	close;
+}
+
+prontera,172,220,3	script	Shopping Centre	2_BULLETIN_BOARD,{
+	mes " ";
+	mes " Shopping Centre ";
+	mes " ";
+	close;
+}

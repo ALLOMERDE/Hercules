@@ -126,7 +126,7 @@ menu	"Prontera",T1, "Alberta",T2, "Aldebaran",T3, "Amatsu",T4, "Ayothaya",T5,
 		"Izlude",T16, "Jawaii",T17, "Lighthalzen",T18, "Louyang",T19, "Lutie",T20,
 		"Malangdo",T21, "Malaya",T22, "Manuk",T23, "Midgarts Expedition Camp",T24,
 		"Mora",T25, "Morroc",T26, "Moscovia",T27, "Nameless Island",T28,
-		"Niflheim",T29, "Payon",T30, "Rachel",T31, "Splendide",T32, "Thor Camp",T33,
+		"Payon",T30, "Rachel",T31, "Splendide",T32, "Thor Camp",T33,
 		"Umbala",T34, "Veins",T35, "Yuno",T36;
 
 T1: Go("prontera",155,183);
@@ -164,7 +164,6 @@ T25: Restrict("RE");
 T26: Go("morocc",156,93);
 T27: Go("moscovia",223,184);
 T28: Go("nameless_n",256,215);
-T29: Go("niflheim",202,174);
 T30: Go("payon",179,100);
 T31: Go("rachel",130,110);
 T32: Go("splendide",201,147);
@@ -485,7 +484,7 @@ glast_01,372,308,4	duplicate(Warper)	Warper#glh	4_F_VALKYRIE
 gonryun,162,122,4	duplicate(Warper)	Warper#gon	4_F_VALKYRIE
 hugel,101,151,4	duplicate(Warper)	Warper#hug	4_F_VALKYRIE
 izlu2dun,110,92,4	duplicate(Warper)	Warper#izd	4_F_VALKYRIE
-izlude,134,150,4	duplicate(Warper)	Warper#izl	4_F_VALKYRIE	//Pre-RE: (132,120)
+izlude,134,95,3	duplicate(Warper)	Warper#izl	4_F_VALKYRIE	//Pre-RE: (132,120)
 jawaii,253,138,4	duplicate(Warper)	Warper#jaw	4_F_VALKYRIE
 lighthalzen,162,102,4	duplicate(Warper)	Warper#lhz	4_F_VALKYRIE
 louyang,208,103,6	duplicate(Warper)	Warper#lou	4_F_VALKYRIE
@@ -496,7 +495,6 @@ moc_ruins,64,164,4	duplicate(Warper)	Warper#moc	4_F_VALKYRIE
 morocc,159,97,4	duplicate(Warper)	Warper#mor	4_F_VALKYRIE
 moscovia,229,191,4	duplicate(Warper)	Warper#mos	4_F_VALKYRIE
 nameless_n,259,213,4	duplicate(Warper)	Warper#nam	4_F_VALKYRIE
-niflheim,205,179,4	duplicate(Warper)	Warper#nif	4_F_VALKYRIE
 pay_arche,42,134,4	duplicate(Warper)	Warper#arc	4_F_VALKYRIE
 payon,182,108,4	duplicate(Warper)	Warper#pay	4_F_VALKYRIE
 prontera,159,192,4	duplicate(Warper)	Warper#prt	4_F_VALKYRIE

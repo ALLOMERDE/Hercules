@@ -5448,44 +5448,6 @@ mosk_in,221,43,0	script	#bowl	HIDDEN_NPC,{
 	}
 }
 
-//- Center of Town -
-moscovia,224,190,0	script	#nowinterplz	CLEAR_NPC,{
-	if (mos_nowinter != 19) end;
-	if (countitem(Yaga_Secret_Medicine)) {
-		mes "["+strcharinfo(PC_NAME)+"]";
-		mes "This place must be";
-		mes "the center of town...";
-		next;
-		mes "["+strcharinfo(PC_NAME)+"]";
-		mes "Ok, let's do it!";
-		next;
-		mes "-I drop the magic bottle";
-		mes "containing Baba Yaga's";
-		mes "Secret Medicine.-";
-		delitem Yaga_Secret_Medicine,1;
-		specialeffect EF_BARRIER;
-		mos_nowinter = 20;
-		changequest(18078, 18079);
-		next;
-		mes "-You feel like your";
-		mes "body is heating up.";
-		mes "It's much hotter";
-		mes "than before.-";
-		next;
-		mes "["+strcharinfo(PC_NAME)+"]";
-		mes "I'm sure that the season has changed";
-		mes "But how can I confirm this?";
-		next;
-		mes "["+strcharinfo(PC_NAME)+"]";
-		mes "First I'm going to see the Csar.";
-		mes "He would like to hear about this.";
-		close;
-	}
-	mes "["+strcharinfo(PC_NAME)+"]";
-	mes "Ah, where did I place";
-	mes "the magic bottle that Baba Yaga gave to me...";
-	close;
-}
 
 //- Villagers -
 moscovia,252,203,5	script	A Little Girl#mos1	4_F_RUSCHILD,{
