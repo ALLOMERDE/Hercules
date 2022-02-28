@@ -359,7 +359,7 @@ enum mob_id {
 	MOBID_RED_MUSHROOM     = 1085, ///<     RED_MUSHROOM / Red Mushroom
 
 	MOBID_MARINE_SPHERE    = 1142, ///<    MARINE_SPHERE / Marine Sphere
-
+	MOBID_G_MARINE_SPHERE  = 1578, ///<    MARINE_SPHERE / Marine Sphere
 	MOBID_EMPELIUM         = 1288, ///<         EMPELIUM / Emperium
 
 	MOBID_GIANT_HONET      = 1303, ///<      GIANT_HONET / Giant Hornet
