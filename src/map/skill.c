@@ -18203,21 +18203,21 @@ static int skill_cell_overlap(struct block_list *bl, va_list ap)
 						if(map->getcell(bl->m, bl, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
 							return 1;
 						}else{
-							skill_delunit(bl);
+							skill->delunit(unit);
 							return 1;
 						}
 					case WZ_STORMGUST:
 						if(map->getcell(bl->m, bl, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
 							return 1;
 						}else{
-							skill_delunit(bl);
+							skill->delunit(unit);
 							return 1;
 						}
 		            case SA_LANDPROTECTOR:
-						skill_delunit(bl);
+						skill->delunit(unit);
 						return 1;
 					 default:
-						skill_delunit(bl);
+						skill->delunit(unit);
 						return 1;
 		            }
 		            break;
