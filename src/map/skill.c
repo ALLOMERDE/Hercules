@@ -4040,10 +4040,12 @@ static int skill_check_unit_range_sub(struct block_list *bl, va_list ap)
 
 	switch (skill_id) {
 		case AL_PNEUMA:
+				case MG_SAFETYWALL:
+				case WZ_FIREPILLAR:
 			if(g_skill_id == SA_LANDPROTECTOR)
 				break;
 			FALLTHROUGH
-		case MG_SAFETYWALL:
+		//case MG_SAFETYWALL:
 		case MH_STEINWAND:
 		case SC_MAELSTROM:
 		case SO_ELEMENTAL_SHIELD:
@@ -12177,10 +12179,16 @@ static int skill_castend_pos2(struct block_list *src, int x, int y, uint16 skill
 				return 0; // Don't consume gems if cast on LP
 			}
 		}
+
+		case PF_FOGWALL:
+		if( map_getcell(src->m, x, y, CELL_CHKLANDPROTECTOR) ) {
+			clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+			break;
+		}
+
 		FALLTHROUGH
 		case MG_FIREWALL:
 		case MG_THUNDERSTORM:
-
 		case AL_PNEUMA:
 		case WZ_FIREPILLAR:
 		case WZ_QUAGMIRE:
@@ -12298,6 +12306,11 @@ static int skill_castend_pos2(struct block_list *src, int x, int y, uint16 skill
 			skill->unitsetting(src,skill_id,skill_lv,x,y,0);
 			break;
 		case WZ_ICEWALL:
+				if( map_getcell(src->m, x, y, CELL_CHKLANDPROTECTOR) ) {
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					break;
+				}
+
 			flag |= 1;
 			if( skill->unitsetting(src,skill_id,skill_lv,x,y,0) )
 				map->list[src->m].setcell(src->m, x, y, CELL_NOICEWALL, true);
@@ -18181,11 +18194,34 @@ static int skill_cell_overlap(struct block_list *bl, va_list ap)
 			// SA_LANDPROTECTOR blocks everything except songs/dances/traps (and NOLP)
 			// TODO: Do these skills ignore land protector when placed on top?
 			if( !(skill->get_inf2(su->group->skill_id)&(INF2_SONG_DANCE|INF2_TRAP|INF2_NOLP)) || su->group->skill_id == WZ_FIREPILLAR || su->group->skill_id == GN_HELLS_PLANT) {
-				skill->delunit(su);
-				return 1;
+				//skill->delunit(su);
+				//return 1;
 			}
 			break;
 		case HW_GANBANTEIN:
+					switch (unit->group->skill_id) {
+					case WZ_METEOR:
+						if(map_getcell(bl->m, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
+							return 1;
+						}else{
+							skill_delunit(unit);
+							return 1;
+						}
+					case WZ_STORMGUST:
+						if(map_getcell(bl->m, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
+							return 1;
+						}else{
+							skill_delunit(unit);
+							return 1;
+						}
+		            case SA_LANDPROTECTOR:
+						skill_delunit(unit);
+						return 1;
+					 default:
+						skill_delunit(unit);
+						return 1;
+		            }
+		            break;
 		case LG_EARTHDRIVE:
 		case GN_CRAZYWEED_ATK:
 			if( !(su->group->state.song_dance&0x1) ) {// Don't touch song/dance.
