@@ -12214,7 +12214,6 @@ static int skill_castend_pos2(struct block_list *src, int x, int y, uint16 skill
 		case HT_CLAYMORETRAP:
 		case AS_VENOMDUST:
 		case AM_DEMONSTRATION:
-		case PF_FOGWALL:
 		case PF_SPIDERWEB:
 		case HT_TALKIEBOX:
 		case WE_CALLPARTNER:
@@ -14862,7 +14861,7 @@ static int skill_unit_onleft(uint16 skill_id, struct block_list *bl, int64 tick)
 				sce->timer = timer->add(tick+skill->get_time2(skill_id,1), status->change_timer, bl->id, type);
 			}
 			break;
-		WALL:
+		case PF_FOGWALL:
 			if (sce) {
 				status_change_end(bl, type, INVALID_TIMER);
 				nullpo_retb(sc);
@@ -18199,26 +18198,26 @@ static int skill_cell_overlap(struct block_list *bl, va_list ap)
 			}
 			break;
 		case HW_GANBANTEIN:
-					switch (unit->group->skill_id) {
+					switch (su->group->skill_id) {
 					case WZ_METEOR:
 						if(map->getcell(bl->m, bl, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
 							return 1;
 						}else{
-							skill_delunit(unit);
+							skill_delunit(su);
 							return 1;
 						}
 					case WZ_STORMGUST:
 						if(map->getcell(bl->m, bl, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
 							return 1;
 						}else{
-							skill_delunit(unit);
+							skill_delunit(su);
 							return 1;
 						}
 		            case SA_LANDPROTECTOR:
-						skill_delunit(unit);
+						skill_delunit(su);
 						return 1;
 					 default:
-						skill_delunit(unit);
+						skill_delunit(su);
 						return 1;
 		            }
 		            break;
