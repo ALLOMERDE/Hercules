@@ -12181,8 +12181,8 @@ static int skill_castend_pos2(struct block_list *src, int x, int y, uint16 skill
 		}
 
 		case PF_FOGWALL:
-		if( map_getcell(src->m, x, y, CELL_CHKLANDPROTECTOR) ) {
-			clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+		if( map->getcell(src->m, x, y, CELL_CHKLANDPROTECTOR) ) {
+			clif->skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
 			break;
 		}
 
@@ -12306,8 +12306,8 @@ static int skill_castend_pos2(struct block_list *src, int x, int y, uint16 skill
 			skill->unitsetting(src,skill_id,skill_lv,x,y,0);
 			break;
 		case WZ_ICEWALL:
-				if( map_getcell(src->m, x, y, CELL_CHKLANDPROTECTOR) ) {
-					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+				if( map->getcell(src->m, x, y, CELL_CHKLANDPROTECTOR) ) {
+					clif->skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
 					break;
 				}
 
@@ -18201,14 +18201,14 @@ static int skill_cell_overlap(struct block_list *bl, va_list ap)
 		case HW_GANBANTEIN:
 					switch (unit->group->skill_id) {
 					case WZ_METEOR:
-						if(map_getcell(bl->m, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
+						if(map->getcell(bl->m, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
 							return 1;
 						}else{
 							skill_delunit(unit);
 							return 1;
 						}
 					case WZ_STORMGUST:
-						if(map_getcell(bl->m, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
+						if(map->getcell(bl->m, bl->x, bl->y, CELL_CHKLANDPROTECTOR)){
 							return 1;
 						}else{
 							skill_delunit(unit);
