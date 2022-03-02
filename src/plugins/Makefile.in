@@ -33,7 +33,7 @@
 #                                                                    #
 # Note: DO NOT include the .c extension!!!                           #
 
-MYPLUGINS := $(MYPLUGINS) koe packetfilter whosell 
+MYPLUGINS := $(MYPLUGINS) koe packetfilter
 
 #                                                                    #
 #########  DO NOT EDIT ANYTHING BELOW THIS LINE!!!  ##################
